@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Creando un usario</h1>
+    <form action="/ejercicio/guardar/" method="POST">
+        {% csrf_token %}
+        <label for="nombre" >Nombre</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Ejemplo->Juanito" required>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" placeholder="Ejemplo->Quispe Tupac" required>
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" id="edad" placeholder="Ejemplo->15" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Ejemplo@gmail.com" required>
+        <label for="telefo">Telefono</label>
+        <input type="number" name="telefono" id="telefono" placeholder="123456789" required>
+        <label for="carrera">Carrera</label>
+        <input type="text" name="carrera" placeholder="Diseño y desarrollo de sotfware" required>
+        <input type="submit" value="Crear">
+    </form>
+    <a href="/ejercicio/"><button>Cancelar</button></a>
+</body>
+</html>

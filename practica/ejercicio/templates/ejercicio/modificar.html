@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Modificando el usuario {{estudiante.nombre}}</h1>
+    <form action="/ejercicio/{{estudiante.id}}/modificar/" method="POST">
+        {% csrf_token %}
+        <label for="nombre" >Nombre</label>
+        <input type="text" name="nombre" id="nombre" value="{{estudiante.nombre}}">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" value="{{estudiante.apellido}}">
+        <label for="edad">edad</label>
+        <input type="number" name="edad" id="edad" value="{{estudiante.edad}}">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" value="{{estudiante.email}}">
+        <label for="telefono">Telefono</label>
+        <input type="number" name="telefono" id="telefono" value="{{estudiante.telefono}}">
+        <label for="carrera">Carrera</label>
+        <input type="text" name="carrera" id="carrera" value="{{estudiante.carrera}}">
+        <input type="submit" value="Modificar">
+    </form>
+    <a href="/ejercicio/"><button>CANCELAR</button></a>
+</body>
+</html>

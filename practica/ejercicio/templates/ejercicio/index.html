@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if estudiantes %}
+        <ul>
+            {% for estudiante in estudiantes %}
+                <li>
+                    Estudiante---> {{estudiante.apellido}}
+                    <a href="/ejercicio/{{ estudiante.id }}">
+                        <button>Mostrar todos los datos</button>
+                    </a>
+                    <a href="/ejercicio/{{estudiante.id}}/editar">
+                        <button>Modificar</button>
+                    </a>
+                    <a href="/ejercicio/{{estudiante.id}}/eliminar" >
+                        <button onclick="confirm('Seguro que quieres borrar este estudiante')">Eliminar</button>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/ejercicio/crear"><button>Crear nuevo estudiante</button></a>
+    {% else %}
+        <p>No hay estudiantes</p>
+        <button><a href="/ejercicio/crear">Ingresar alguno</a></button>
+    {% endif %}
+</body>
+</html>
